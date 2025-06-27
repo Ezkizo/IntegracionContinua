@@ -24,9 +24,10 @@ jobs:
         run: npm run test
 
   deploy:
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Deploy to pages
-        run: Echo "Deploying to pages..."
+        run: echo "Deploying to pages..."
 
